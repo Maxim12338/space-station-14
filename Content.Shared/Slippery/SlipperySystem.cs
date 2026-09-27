@@ -106,8 +106,10 @@ public sealed class SlipperySystem : EntitySystem
         if (attemptEv.SlowOverSlippery)
             _speedModifier.AddModifiedEntity(other);
 
-        if (attemptEv.NoSlip)
+        //SS220-OmegaSoap-Buff-begins
+        if (attemptEv.NoSlip && ! HasComp<IgnoreNoSlipComponent>(uid))
             return;
+        //SS220-OmegaSoap-Buff-ends
 
         var attemptCausingEv = new SlipCausingAttemptEvent();
         RaiseLocalEvent(uid, ref attemptCausingEv);

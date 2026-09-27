@@ -241,6 +241,7 @@
       launchForwardsMultiplier: 3.0
   - type: Item
     heldPrefix: omega
+  - type: IgnoreNoSlip #SS220-OmegaSoap-Buff
   - type: SolutionContainerManager
     solutions:
       soap:
